@@ -245,7 +245,7 @@ function App() {
                     />
                   </svg>
                 </div>
-                <div className="btn-hover" onClick={() => editRange(`${range.sheetId}--${range.rng}`)}>
+                <div className="btn-hover" >
                 <svg
                     width="24"
                     height="24"
