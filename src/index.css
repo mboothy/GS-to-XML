@@ -1,12 +1,24 @@
-.clickable {
-  cursor: pointer;
+.btn-hover:hover {
+    cursor: pointer;
 }
-.icon-row {
-  width: 2em;
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
-.icon-folder {
-  width: 1em;
-}
-.icon-file {
-  width: 0.75em;
-}
+
+#notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .hidden {
+    display: none;
+  }

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "GS to XML",
+  "name": "Google Sheet to Viz XML",
   "icons": [
     {
       "src": "favicon.ico",
