@@ -18,11 +18,12 @@ function App() {
   const [modalData, setModalData] = useState()
   const [version, setVersion] = useState()
 
-  ipcRenderer.send('app-version')
   ipcRenderer.on('app_version', (event, arg) => {
     
     setVersion('V' + arg.version);
   });
+  
+  
 
 
   const getRanges = async () => {
@@ -36,6 +37,9 @@ function App() {
     })
   }
   useEffect(() => {
+    ipcRenderer.invoke('app-version').then((res) => {
+        setVersion(res.version)
+    })
     getRanges()
     getOutputPath()
 
@@ -130,7 +134,8 @@ function App() {
 
     {modal && modalData ? <PreviewModal data={modalData} close={() => setModal(false)} /> : ''}
     <div className="container mt-2">
-      <h1>Google Sheets to XML - {version}</h1>
+        <p className="form-text m-0">V{version}</p>
+      <h1 className=''>Google Sheets to XML</h1>
       <div className="operation">
         <h4>Operation: </h4>
         <div className="outputPath">

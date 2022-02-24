@@ -67,8 +67,8 @@ app.on('window-all-closed', function () {
   }
 })
 
-ipcMain.on('app-version', (event) => {
-  event.sender.send('app-version', { version: app.getVersion() });
+ipcMain.handle('app-version', (event) => {
+  return  {version: app.getVersion()}
 });
 
 app.on('activate', function () {
